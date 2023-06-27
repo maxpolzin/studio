@@ -42,7 +42,7 @@ function downloadCSV(datasets: DataSet[], xAxisVal: PlotXAxisVal): void {
 }
 
 
-function generateSVG(datasets: DataSet[], xAxisVal: PlotXAxisVal): string {
+function generateSVG(datasets: DataSet[]): string {
   const svgWidth = 500;
   const svgHeight = 500;
   const margin = 40;
@@ -177,15 +177,10 @@ function generateSVG(datasets: DataSet[], xAxisVal: PlotXAxisVal): string {
 }
 
 
-function downloadSVG(datasets: DataSet[], xAxisVal: PlotXAxisVal): void {
-  console.log(xAxisVal)
-  console.log(datasets)
-
-  const svgData = generateSVG(datasets, xAxisVal);
-  console.log(svgData)
+function downloadSVG(datasets: DataSet[]): void {
+  const svgData = generateSVG(datasets);
   const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8;" });
   downloadFiles([{ blob, fileName: `plot_data.svg` }]);
-
 }
 
 export { downloadCSV, downloadSVG, generateCSV };

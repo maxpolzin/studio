@@ -234,8 +234,8 @@ function Plot(props: Props) {
       },
       {
         type: "item",
-        label: "Download plot data as SVG",
-        onclick: () => downloadSVG(datasets, xAxisVal),
+        label: "Download plot as SVG",
+        onclick: () => downloadSVG(datasets),
       },
     ];
     return items;
