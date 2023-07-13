@@ -147,7 +147,7 @@ function generateSVG(datasets: DataSet[]): string {
         y="${yPos}"
         text-anchor="end"
         dominant-baseline="middle"
-        style="fill:#000000;font-size:12px">${(yMin + (yMax - yMin) * (i / 10)).toFixed(1)}</text>`);
+        style="fill:#000000;font-size:12px">${(yMin + (yMax - yMin) * (i / 10)).toFixed(2)}</text>`);
   }
 
   svgData += yAxis + yTicks.join("");
