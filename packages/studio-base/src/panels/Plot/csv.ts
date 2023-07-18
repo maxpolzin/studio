@@ -47,7 +47,7 @@ function generateSVG(datasets: DataSet[]): string {
   const svgHeight = 500;
   const margin = 40;
   const tickSize = 5;
-  const maxPoints = 1000;
+  const maxPoints = 10000;
 
   let svgData = `
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -111,7 +111,7 @@ function generateSVG(datasets: DataSet[]): string {
         y="${svgHeight - margin + tickSize + 10}"
         text-anchor="middle"
         dominant-baseline="hanging"
-        style="fill:#000000;font-size:12px">${(xMin + (xMax - xMin) * (i / 10)).toFixed(1)}</text>`);
+        style="fill:#000000;font-size:12px">${(xMin + (xMax - xMin) * (i / 10)).toFixed(2)}</text>`);
   }
   svgData += xAxis + xTicks.join("");
 
