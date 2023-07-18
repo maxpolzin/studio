@@ -43,7 +43,7 @@ function downloadCSV(datasets: Immutable<DataSet[]>, xAxisVal: PlotXAxisVal): vo
 }
 
 
-function generateSVG(datasets: DataSet[]): string {
+function generateSVG(datasets: Immutable<DataSet[]>): string {
   const svgWidth = 500;
   const svgHeight = 500;
   const margin = 40;
@@ -178,7 +178,7 @@ function generateSVG(datasets: DataSet[]): string {
 }
 
 
-function downloadSVG(datasets: DataSet[]): void {
+function downloadSVG(datasets: Immutable<DataSet[]>): void {
   const svgData = generateSVG(datasets);
   const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8;" });
   downloadFiles([{ blob, fileName: `plot_data.svg` }]);
