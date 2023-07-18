@@ -44,7 +44,7 @@ import { PANEL_TITLE_CONFIG_KEY } from "@foxglove/studio-base/util/layout";
 
 import PlotChart from "./PlotChart";
 import { PlotLegend } from "./PlotLegend";
-import { downloadCSV } from "./csv";
+import { downloadCSV, downloadSVG } from "./csv";
 import { usePlotPanelSettings } from "./settings";
 import { PlotConfig } from "./types";
 
@@ -226,6 +226,11 @@ function Plot(props: Props) {
         type: "item",
         label: "Download plot data as CSV",
         onclick: () => downloadCSV(datasets, xAxisVal),
+      },
+      {
+        type: "item",
+        label: "Download plot as SVG",
+        onclick: () => downloadSVG(datasets),
       },
     ];
     return items;
